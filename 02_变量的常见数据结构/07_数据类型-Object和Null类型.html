@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //object类型的基本使用
+        var person = {
+            name: "why",
+            age: 18,
+            height: 1.88
+        }
+        console.log(person)
+
+        //2.对象类型中某一个属性
+        console.log(person.name);
+        var message = "hello world"
+        console.log(message.length);
+
+        //3.null类型
+        //3.1 其他类型的初始化
+        var age = 0
+        var num = 0
+        var message = ""//空字符串
+        var isAdmin = false
+        //age/message/isAdmin->false
+        //if(age){
+        //console.log("分支语句不会执行")
+        //
+
+        //当对一个对象类型进行初始化时,不建议初始化为{},建议初始化为null
+        //3.2初始化为{},转成boolean类型,是为true
+        var book = {}//true
+        if (book) {
+            console.log('book的逻辑代码执行');
+        }
+        //null存在的意义就是对 对象进行初始化的 ,并且在转成boolean类型时为false
+        var book = null
+
+
+
+    </script>
+</body>
+
+</html>

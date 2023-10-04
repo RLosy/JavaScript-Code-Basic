@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>打开的新网页</button>
+    <button>替换的新网页</button>
+    <button>网页重新加载</button>
+
+    <script>
+        //1.完整的URL
+        console.log(location.href);
+        //2.获取url的信息
+        console.log(location.hostname);
+        console.log(location.host);
+        console.log(location.protocol);
+        console.log(location.port);
+        console.log(location.pathname);
+        console.log(location.hash);
+
+        //3.location方法
+        var btnEls = document.querySelectorAll("button")
+         
+        btnEls[0].onclick = function(){
+            //打开新网页有返回按钮
+            location.assign("http://www.baidu.com")
+        }
+        btnEls[1].onclick = function(){
+            //没返回按钮
+            location.replace("http://www.baidu.com")
+        }
+        btnEls[2].onclick = function(){
+            //刷新网页
+            location.reload("http://www.baidu.com")
+        }
+        //4.URLSearchParams(get,set,append,)
+        var URLSearchString = "?name=lyd&age=18&height=1.65"
+        // console.log(URLSearchString.split("&"));
+        var searchParams = new URLSearchParams(URLSearchString)
+        console.log(searchParams.get("name"));
+        console.log(searchParams.get("age"));
+        console.log(searchParams.get("height"));
+
+        searchParams.append("address","杭州市")
+        console.log(searchParams.get("address"));
+
+        console.log(searchParams.toString());
+
+        //encodeURLIComponent 编码
+        //decodeURLIComponent 解码
+
+    </script>
+</body>
+
+</html>

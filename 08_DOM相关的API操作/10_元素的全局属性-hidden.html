@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="btn">切换</button>
+    <!-- hidden属性 -->
+    <div id="box" class="cba" title="aaa" style=" color:red">
+        哈哈哈哈哈哈哈哈
+    </div>
+
+    <script>
+        // var boxEl = document.body.firstElementChild
+        // var boxEl = document.body.children[0]
+        // var boxEl = document.querySelector("#box")
+        // console.log(boxEl);
+
+        //1.点击按钮切换 （显示 隐藏盒子）
+        //获取元素
+        var boxEl = document.body.querySelector("#box")
+        var btnEl = document.querySelector(".btn")
+
+        //2.监听btn的点击
+        btnEl.onclick = function () {
+            //1.隐藏
+            // boxEl.hidden = true
+            // boxEl.style.display = "none"
+            //2.切换
+            // if(boxEl.hidden === false){
+            //     boxEl.hidden = true
+            // }else{
+            //     boxEl.hidden = false
+            // }
+            //3.直接取反        
+            boxEl.hidden = !boxEl.hidden
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

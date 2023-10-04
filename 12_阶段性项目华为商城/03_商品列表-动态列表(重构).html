@@ -1,0 +1,108 @@
+!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/products.css">
+
+</head>
+
+<body>
+    <!-- 商品展示的部分 -->
+    <div class="wrapper">
+        <!-- 面包屑的导航 -->
+        <div class="crumbs">
+            <span class="item">首页</span>
+            <span>&gt;</span>
+            <span class="item">笔记本</span>
+        </div>
+        <!-- 对内容进行操作 -->
+        <div class="operation">
+            <ul class="row category">
+                <li class="item">分类:</li>
+                <li class="item">笔记本</li>
+                <li class="item">台式机</li>
+                <li class="item">智慧屏</li>
+            </ul>
+            <ul class="row discount">
+                <li class="item">服务优惠:</li>
+                <li class="item">仅看有货</li>
+                <li class="item">分期免息</li>
+                <li class="item">优惠商品</li>
+            </ul>
+            <ul class="row sort">
+                <li class="item">排序：</li>
+                <li class="item active">综合</li>
+                <li class="item">最新</li>
+                <li class="item">评论数</li>
+                <li class="item">价格</li>
+            </ul>
+        </div>
+        <!-- 商品列表部分 -->
+        <ul class="products">
+            <li class="item">
+
+            </li>
+        </ul>
+    </div>
+    <script src="./json/product_data.js"></script>
+    <script>
+        //0.华为资源服务地址
+        var serverURL = "https://res.vmallres.com/pimages"
+        //1.动态的展示商品列表
+        //获取一条数据
+        //将一条数据转成界面一个item
+        //1.1 最外层的item
+        //1.2 创建a元素
+        //1.3 添加img
+        //1.4 创建name
+        //1.5 创建discount
+        //1.6 创建price
+        //1.7 创建service
+        //1.8 创建comment
+
+        //1.动态的展示商品列表
+        //获取一条数据
+        var productsEl = document.querySelector(".products")
+        for (var i = 0; i < resultList.length; i++) {
+            //将一条数据转成界面一个item
+            var resultItem = resultList[i];
+            //1.1 最外层的item
+            var itemEl = document.createElement("li")
+            itemEl.classList.add("item")
+
+            //item里面的内容
+
+            var serviceString = ""
+            for (var label of resultItem.promoLabels) {
+                serviceString += `<span class= "tip">${label}</span>`
+            }
+
+            itemEl.innerHTML = `
+            <a href="#">
+                    <img class="album" src="${serverURL}${resultItem.photoPath}428_428_${resultItem.photoName}" alt="">
+                    <div class="name">${resultItem.name}</div>
+                    <div class="discount">${resultItem.promotionInfo}</div>
+                    <div class="price">${resultItem.price}/div>
+
+                    <div class="service">
+                        ${serviceString}
+                    </div>
+                    <div class="comment">
+                        <span>${resultItem.rateCount}人评论</span>
+                        <span>${resultItem.gooodRate}%好评</span>
+                    </div>
+                </a>
+            `
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //对象的遍历
+        // 对象的遍历（迭代）：表示获取对象中所有的属性和方法
+        // Object.key()方法会返回一个由一个给定对象的自身可枚举属性组成的数组
+        var info = {
+            name: "rosy",
+            age: "18",
+            height: "1.65"
+        }
+        // 遍历方式一：普通for循环
+        // var infokeys = Object.key(info)
+        // for (var i = 0; i < infokeys.length; i++) {
+        //     var key = infokeys[i]
+        //     var value = info[key]
+        //     console.log(`key: ${key},value: ${value}`);
+        // }
+
+
+        // 遍历方式二：for in 遍历方法
+        for (var key in info) {
+            var value = info[key]
+            console.log(`key: ${key},value: ${value}`);
+        }
+        //for ...of ...默认是不能遍历对象
+        
+
+
+
+    </script>
+</body>
+
+</html>

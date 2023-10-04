@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <button data-action="remove">移除</button>
+        <button data-action="create">新建</button>
+        <button data-action="search">搜素</button>
+        <button>1111</button>
+    </div>
+</body>
+
+<script>
+
+    var boxEl = document.querySelector(".box")
+
+    boxEl.onclick = function (event) {
+        var btnEl = event.target
+        var action = btnEl.dataset.action
+
+        switch (action) {
+            case "remove":
+                console.log("点击了移除按钮");
+                break;
+            case "create":
+                console.log("点击了新建按钮");
+                break;
+            case "search":
+                console.log("点击了搜素按钮");
+                break;
+            default:
+                console.log("点击了其他按钮");
+                break;
+        }
+    }
+
+
+
+
+</script>
+
+</html>

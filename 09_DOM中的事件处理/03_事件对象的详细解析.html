@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        display: flex;
+
+        height: 200px;
+        width: 200px;
+        background-color: rgba(218, 186, 29, 0.817);
+    }
+
+    .box span {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span>
+            <button>按钮</button>
+            
+        </span>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script>
+        var divEl = document.querySelector(".box")
+        var spanEl = document.querySelector("span")
+
+        divEl.addEventListener("click", function (event) {
+            // console.log("事件类型:", event.type);
+            // console.log("事件阶段:", event.eventPhase);
+
+            // console.log("事件元素中的位置:", event.offsetX, event.offsetY);
+            // console.log("事件客户端的位置", event.clientX, event.clientY);
+            // console.log("事件页面的位置:", event.pageX, event.pageY);
+
+            // console.log("事件在屏幕中的位置:", event.screenX, event.screenY);
+
+ 
+            // 3.target/currentTarget  
+            // 点击的是自己监听的元素div，event.target === event.currentTarget
+            console.log(event.target);   //事件发生(点击)的对象
+            console.log(event.currentTarget); //当前处理的对象
+            console.log(event.target === event.currentTarget); //true
+        })
+
+    </script>
+</body>
+
+</html>

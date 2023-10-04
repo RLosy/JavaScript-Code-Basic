@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- onchange 在表单元素的内容改变时触发
+    oninput 元素获取用户输入时触发
+    onfocus 元素获取焦点时触发
+    onblur 元素失去焦点时触发
+    onreset 表单重置时触发
+    onsubmit 表单提交时触发 -->
+
+    <!-- <input type="text"> -->
+
+
+    <form action="">
+        <input type="text">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button class="reset">重置</button>
+        <button class="submit">提交</button>
+    </form>
+
+
+    <script>
+        var inputEl = document.querySelector("input")
+
+
+        //1.获取焦点/失去焦点
+        // inputEl.onfocus = function () {
+        //     console.log("input获取焦点~");
+        // }
+        // inputEl.onblur = function () {
+        //     console.log("input失去焦点~");
+        // }
+
+        //2.获取内容/修改内容
+        //input发生在输入阶段 获取焦点
+        //onchange 发生在失去焦点阶段
+        // inputEl.oninput = function(){
+        //     console.log("在输入内容：",inputEl.value);
+        // }
+
+        // inputEl.onchange = function(){
+        //     console.log("change事件内容发生改变：",inputEl.value);
+        // }
+        //3.监听重置和提交
+        var formEl = document.querySelector("form")
+
+        formEl.onreset = function (event){
+            console.log("重置表单~");
+            // event.preventDefault()
+        }
+        formEl.onsubmit = function (event){
+            console.log("提交表单~");
+            event.preventDefault()
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

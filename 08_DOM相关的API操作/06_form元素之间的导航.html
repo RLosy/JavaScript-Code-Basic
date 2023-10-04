@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input name="account" type="text">
+        <input name="password" type="password">
+        <input name="hobbies" type="checkbox" checked>
+        <select name="fruits" id="">
+            <option value="apple">苹果</option>
+            <option value="orange">橘子</option>
+
+        </select>
+
+    </form>
+    <script>
+        //1.获取form form 元素可以直接通过document来获取 document.forms
+        var formEl = document.body.firstElementChild
+        //2.获取form中的子元素   elements（对象）是form独有的属性
+        var inputEl = formEl.elements[0]
+        // console.log(inputEl);
+        //定时器 setTimeout 高阶函数
+        setTimeout(function(){
+            console.log(inputEl.value)
+        },5000)
+    </script>
+
+</body>
+
+</html>

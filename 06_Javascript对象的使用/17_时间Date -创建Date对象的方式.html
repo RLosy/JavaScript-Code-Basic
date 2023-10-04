@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.创建Data对象的方式
+        var date1 = new Date()
+        console.log(date1);
+        //2.传入参数：时间字符串
+        var date2 = new Date("2023-06-09")
+        console.log(date2);
+        //3.传入具体的年月日时分秒毫秒
+        var date3 = new Date(2023, 10, 10, 9, 9, 7, 333)
+        console.log(date3);
+        //4.传入unix时间戳 1970年1月1日00；00；00 UTC以来的毫秒数
+        //1s等于1000ms
+        var date4 = new Date(1000)
+        console.log(date4);
+
+    </script>
+</body>
+
+</html> 

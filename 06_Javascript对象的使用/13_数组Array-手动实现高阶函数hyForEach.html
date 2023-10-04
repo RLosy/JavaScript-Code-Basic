@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var names = ["abc", "cba", "nba"]
+
+        //forEach函数：可以帮助我遍历数组
+        // for (var i = 0; i < names.length; i++) {
+        //     console.log(names[i])
+        // }
+
+        //1.hyForEach版本一
+        // function hyForEach(fn) {
+        //     for (var i = 0; i < names.length; i++) {
+        //         fn(names[i], i, names)
+        //     }
+        // }
+        // hyForEach(function (item, index, name) {
+        //     console.log("-------", item, index, name)
+        // })
+        // names.forEach(function (item, index, names) {
+        //     console.log("-------", item, index, names);
+        // })
+        //2.hyForEach版本二
+        // function hyForEach(fn, arr) {
+        //     for (var i = 0; i < arr.length; i++) {
+        //         fn(arr[i], i, arr)
+        //     }
+        // }
+        // hyForEach(function (item, index, name) {
+        //     console.log("-------", item, index, name)
+        // }, names)
+        // hyForEach(function (item, index, names) {
+        //     console.log("-------", item, index, names);
+        // }, [123, 321, 222, 1111])
+
+        //3.hyForEach版本三
+        // names.hyForEach = function (fn) {
+        //     for (var i = 0; i < this.length; i++) {
+        //         fn(this[i], i, this)
+        //     }
+        // }
+        // names.hyForEach(function(item,index,names){
+        //     console.log("-----",item,index,names);
+        // })
+        //4.hyForEach版本四
+        // Array.prototype.hyForEach = function (fn) {
+        //     for (var i = 0; i < this.length; i++) {
+        //         fn(this[i], i, this)
+        //     }
+        // }
+        // names.hyForEach(function (item, index, names) {
+        //     console.log("------", item, index, names);
+        // })
+
+        // var students = [
+        //     { id: 100, name: "why", age: 18 },
+        //     { id: 101, name: "rose", age: 18 },
+        //     { id: 102, name: "jisoo", age: 18 },
+        //     { id: 103, name: "lisa", age: 18 }
+        // ]
+        // students.hyForEach(function (item, index, stus) {
+        //     console.log("~~~~~~", item, index, stus);
+        // })
+
+
+
+        // var names = ["abc", "nba", "cba"]
+
+        // function hyForEach(fn) {
+        //     for (var i = 0; i < names.length; i++) {
+        //         fn(names[i], i, names);
+        //     }
+        // }
+
+        // hyForEach(function (item, index, names) {
+        //     console.log(item, index, names);
+        // })
+
+        // names.forEach(function (item, index, names) {
+        //     console.log(item, index, names);
+        // })
+
+
+        var students = [
+            { name: "rosy", age: 18, id: "110" },
+            { name: "lisa", age: 19, id: "111" },
+            { name: "jisoo", age: 20, id: "112" },
+        ]
+
+        function lydForEach(fn) {
+            for (var i = 0; i < this.length; i++) {
+                fn(this[i], i, this)
+            }
+        }
+
+        Array.prototype.lydForEach = function (fn) {
+            for (var i = 0; i < this.length; i++) {
+                fn(this[i], i, this)
+            }
+        };
+        students.lydForEach(function (item, index, stus) {
+            console.log("======",item, index, stus);
+        })
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

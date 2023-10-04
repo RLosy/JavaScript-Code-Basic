@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.构造函数也是一个普通的函数，从表现形式来说，和千千万万个普通的函数没有任何区别
+        //那么如果这么一个普通的函数使用new操作符来调用了，那么这个函数称之为构造函数、
+        //如果一个函数被使用new操作符调用了，那么它会执行如下操作
+        // 1.在内存中创建一个新的对象（空对象）
+        // 2.这个对象内部的prototype属性会被赋值为该构造函数的prototype属性
+        // 3.构造函数的内部的this，会指向创建出来的新对象
+        // 4.执行函数的内部代码（函数体代码）
+        // 5.如果构造函数没有返回非空对象，则返回创建出来的新对象
+        // 如果一个函数的new操作符调用
+        // 1.在内存中创建出来一个新的空对象
+        // 2.让this会指向这个空对象
+        // 3.执行函数体的内部代码
+        // 4.如果构造函数没有
+
+        function Coder(name, age, height) {
+                                    //  this = {}
+            this.name = name
+            this.age = age
+            this.height = height
+            this.running = function () {
+                console.log("running~");
+            }                   
+                                    //  return this
+        }
+        // 在函数调用的前面加new关键字（操作符）
+        var stu1 = new Coder("why", 18, 1.88)
+        var stu2 = new Coder("kobe", 30, 1.98)
+        console.log(stu1, stu2)
+
+
+        // 工厂方法创建对象有一个比较大的问题：我们在打印对象时，对象的类型都是object类型
+        // 但是从某些角度来说，这些对象应该有一个他们共同的类型
+        // 构造函数也称之为构造器 ，通常是我们在创建对象时会调用的函数
+        // 在其他面向的编程语言里面，构造函数是存在于类中的一个方法，称之为构造方法
+        // 但是js中的构造函数有点不太一样，构造函数扮演了其他语言中类的角色
+
+        // 比如系统默认给我们提供的date就是一个构造函数，也可以看成是一个类
+        // 在es5之前，我们都是通过function来声明一个构造函数（类）的，之后通过new关键字来对其进行调用
+        // 在es6之后，js可以像别的语言一样，通过class来声明一个类
+
+        // 现实生活中往往是根据一份描述一个模板来创建一个实体对象的
+        // 编程语言也是一样，也必须先有一份描述，在这份描述中说明将来创建出来的对象有哪些属性（成员变量）和行为（成员方法）
+
+
+
+        // for (var i = 0; i < 100; i++) {
+        //     var numberRandom = Math.floor(Math.random() * 45)+5
+        //     console.log(numberRandom)
+        // }
+
+
+        var message = "hello world"
+        console.log(message.length)
+
+        console.log(message[4])
+        console.log(message.charAt(4))
+
+        console.log(message[20])
+        console.log(message.charAt(20))
+
+
+        for (var i = 0; i < message.length; i++) {
+            console.log(message[i])
+        }
+
+        //for..of的遍历->迭代器
+        //目前可迭代对象只有字符串和数组
+        //对象是不支持for..of
+        //string对象内部是将字符串变成了一个可迭代对象
+
+        for (var char of message) {
+            console.log(char)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

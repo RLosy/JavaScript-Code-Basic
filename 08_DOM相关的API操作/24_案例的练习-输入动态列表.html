@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>动态创建列表</h2>
+    <ul class="list"></ul>
+
+    <script>
+        // //通过prompt接受用户的输入，根据输入创建一个列表    动态创建列表
+        // var ulEl = document.querySelector(".list")
+
+        // var isFlag = true
+        // while (isFlag) {
+        //     var message = prompt("请输入列表信息：")
+        //     if (!message) {
+        //         isFlag = false
+        //     } else {
+        //         var liEl = document.createElement("li")
+        //         liEl.textContent = message
+        //         ulEl.append(liEl)
+        //     }
+        // }
+
+
+
+        var ulEl = document.querySelector(".list")
+        var isFlag = true   //建议一个变量一个作用
+        while (isFlag) {
+            debugger
+            var message = prompt("请用户输入列表信息：")
+
+            if (!message) { //没有输入内容
+                isFlag = false
+            } else {
+                var liEl = document.createElement("li")
+                liEl.textContent = message
+                ulEl.append(liEl)
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

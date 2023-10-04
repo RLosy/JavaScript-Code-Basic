@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>按钮</button>
+    </div>
+
+    <script>
+        var btnEl = document.querySelector("button")
+        var divEl = document.querySelector("div")
+
+        divEl.onclick =function(event){
+            //绑定在谁身上 this就指向谁
+            console.log(this);
+            console.log(divEl);
+            console.log(event.currentTarget);
+
+            console.log(this === event.currentTarget); //true
+
+        }
+    </script>
+</body>
+</html>

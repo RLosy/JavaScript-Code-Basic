@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.原始类型查找
+        // var names = ["abc", "cba", "nba", "mba"]
+
+        // //原生find方法
+        // var findName = names.find(function (item, index, arr) {
+        //     console.log(item, index, arr)
+        //     return item === "nba"
+        // })
+        // console.log(findName)
+        //2.数组中对象类型的查找
+        // var students = [
+        //     { id: 100, name: "why", age: 18 },
+        //     { id: 101, name: "rose", age: 18 },
+        //     { id: 102, name: "jisoo", age: 18 },
+        //     { id: 103, name: "lisa", age: 18 }
+        // ]
+        // var findStu = students.find(function (item) {
+        //     // console.log(item)
+        //     return item.id === 101
+        // })
+        // console.log(findStu);
+        //3.自己实现hyFind(不要求实现)
+        // var students = [
+        //     { id: 100, name: "why", age: 18 },
+        //     { id: 101, name: "rose", age: 18 },
+        //     { id: 102, name: "jisoo", age: 18 },
+        //     { id: 103, name: "lisa", age: 18 }
+        // ]
+
+        // Array.prototype.hyFind = function (fn) {
+        //     var item = undefined
+        //     for (var i = 0; i < this.length; i++) {
+        //         var isFlag = fn(this[i], i, this)
+        //         if (isFlag) {
+        //             // item = this[i]
+        //             // break
+        //             return this[i]
+        //         }
+        //     }
+        //     // return item
+        // }
+
+
+        // var findStu = students.hyFind(function (item, index, arr) {
+        //     return item.id === 110
+        // })
+        // console.log(findStu);
+
+
+
+
+        //练习：1.原始类型查找
+        // var names = ["abc", "nba", "cab", "mba"]
+
+        // var findName = names.find(function fn(item, index, arr) {
+        //     // console.log(item);
+        //     return item === "nba"
+        // })
+        // console.log(findName);
+
+
+
+        //2.数组对象查找
+        // var students = [
+        //     { id: 100, name: "why", age: 18 },
+        //     { id: 101, name: "rose", age: 18 },
+        //     { id: 102, name: "jisoo", age: 18 },
+        //     { id: 103, name: "lisa", age: 18 }
+        // ]
+
+        // var findStu = students.find(function (item, index, arr) {
+        //     return index === 1
+        // })
+        // console.log(findStu);
+
+        //自己手写find函数
+        var students = [
+            { id: 100, name: "why", age: 18 },
+            { id: 101, name: "rose", age: 18 },
+            { id: 102, name: "jisoo", age: 18 },
+            { id: 103, name: "lisa", age: 18 }
+        ]
+
+
+        Array.prototype.lydFind = function(fn) {
+            var item = undefined
+            for (var i = 0; i < this.length; i++) {
+                var isFlag = fn(this[i], i, this)
+                if (isFlag) {
+                    item = this[i]
+                    break  //查找完终止
+                    //return this[i]
+                }
+            }
+            return item;
+        }
+
+        var findStu = students.lydFind(function (item, index, arr) {
+            return item.id === 103;
+        })
+        console.log(findStu);
+
+
+
+
+    </script>
+</body>
+
+</html>

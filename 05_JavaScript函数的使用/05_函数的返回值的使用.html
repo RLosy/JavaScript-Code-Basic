@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //返回值的注意事项
+        //1.所有的函数，如果没有写返回值，那么默认返回undefined
+        function foo() {
+            console.log("foo函数被执行!");
+        }
+        var result = foo()
+        console.log("foo的返回值:", result);
+        //2.可以写上return关键字，但是后面什么内容都没有的时候，也是返回undefined
+        function bar() {
+            console.log("bar函数被执行~");
+            // return undefined
+            return
+        }
+        var result = bar()
+        console.log("bar的返回值:", result);
+        //3.如果在函数执行到return关键字的时候，函数会立即停止执行，退出函数
+        function baz() {
+            console.log('kobe');
+            console.log('lisa');
+            return
+            console.log('rosy');
+        }
+        baz()
+        //4.返回具体的值
+        function sum(num1, num2) {
+            var result = num1 + num2
+            return result
+        }
+        var result = sum(30, 40)
+        console.log("result:", result);
+
+
+
+
+    </script>
+</body>
+
+</html>

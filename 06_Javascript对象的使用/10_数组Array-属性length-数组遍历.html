@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["abc", "cba", "nba", "mba"]
+
+        //获取数组的长度length 服务器
+        // console.log(names.length)    //4
+        //length属性可写的（扩容）
+        // names.length = 10
+        // console.log(names)
+
+        //设置的length小于原来的元素个数
+        //names.length = 2  截取 
+        // names.length = 0 为empty 清空数组
+        // console.log(names);
+
+        //2.数组的遍历
+        //2.1普通遍历for循环
+        for (var i = 0; i < names.length; i++) {
+            console.log(names[i]);
+
+        }
+        //2.2 for..in ,拿到数组的索引 index
+        // for (var index in names) {
+        //     console.log(index, names[index]);
+        // }
+
+            for(var index in names){
+                var value = names[index]
+                console.log(index,value);
+            }
+
+
+        //2.3 for..of ,拿到数组中的元素
+        for (var item of names) {
+            console.log(item);
+        }
+
+        //对象遍历拿到key
+        var person = {
+            name: "rosy",
+            age: 18,
+            height: 1.88,
+
+        }
+        for(var key in person){
+            var value = person[key]
+            console.log(`key: ${key},value: ${value}`);
+            // console.log(key,value);
+            // console.log("key:",key,"value:",value);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>修改history</button>
+    <button class="back">返回 上一级</button>
+
+
+
+    <script>
+        //前端路由核心：修改了URL，但是页面不刷新
+        //1.修改hash值
+        //2.修改history
+        //history对应的属性
+        console.log(history.length);//会话中的记录条数
+        console.log(history.state); //保存当前状态值
+
+        //2.修改history
+        var btnEl = document.querySelector("button")
+        btnEl.onclick = function () {
+            // history.pushState({ name: "lyd", age: 18 },"","/rosy") //打开指定地址
+            history.replaceState({ name: "lyd", age: 18 },"","/rosy")  //打开新的地址
+
+            
+        }
+
+        var backBtnEl = document.querySelector(".back")
+        backBtnEl.onclick=function(){
+            history.back()
+            history.forward()
+            //类似于上面两个方法，只是可以进入层级
+            history.go(2)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

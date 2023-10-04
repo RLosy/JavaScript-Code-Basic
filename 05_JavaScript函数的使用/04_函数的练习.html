@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //练习二:计算矩形区域的面积
+        function getTangle(width, height) {
+            return width * height
+        }
+        var area1 = getTangle(20, 30)
+        console.log("area1:" + area1)
+
+        //练习三:传入半径radius,计算圆的面积
+        function getCircleArea(radius) {
+            return (Math.PI * radius * radius).toFixed(2)
+        }
+        var area2 = getCircleArea(10)
+        var area3 = getCircleArea(25)
+
+        console.log("area2:" + area2)
+        console.log("area3:" + area3)
+        //练习四:定义一个函数,传入n(n为整数),计算1~n数字的和
+
+        function Sum(n) {
+            var total = 0;
+            for (var i = 1; i <= n; i++) {
+                total = total + i
+            }
+            return total
+        }
+
+        var result1 = Sum(3)
+        console.log("result1:" + result1);
+        //5.斐波那契
+        //数列:1 1 2 3 5 8 13 21 34 55
+        //位置:1 2 3 4 5 6  7  8  9 10  
+        function feibonacii(n) {
+            if (n === 1 || n === 2)
+                return 1
+            return feibonacii(n - 1) + feibonacii(n - 2)
+        }
+        console.log(feibonacii(5))
+        console.log(feibonacii(10))
+
+
+
+        function fibonacii(n) {
+            if (n === 1 || n === 2)
+                return 1
+            var n1 = 1
+            var n2 = 1
+            for (var i = 3; i <= n; i++) {
+                result = n1 + n2
+                n1 = n2
+                n2 = result
+            }
+            return result
+        }
+        console.log(feibonacii(5))
+        console.log(feibonacii(10))
+
+
+
+        function sayHello(name) {
+            function Hi() {
+                console.log("hi " + name)
+            }
+            return Hi
+        }
+        var fn = sayHello("kobe")
+        fn()
+        //6.从服务器拿到很多的数字(语法糖)
+        var playCount1 = 13687
+        var playCount2 = 5433322
+        var playCount3 = 2738974389
+        //封装一个工具函数:对数字进行格式化
+        function formatCount(count) {
+            var result = 0
+            if (count > 10_0000_0000) {
+                result = Math.floor(count / 10_0000_0000) + "亿"
+            } else if (count > 10_0000) {
+                result = Math.floor(count / 10_0000) + "万"
+            } else {
+                result = count
+            }
+            return result
+        }
+        // var Count1 = formatCount(playCount1)
+        // var Count2 = formatCount(playCount2)
+        // var Count3 = formatCount(playCount3)
+
+        // console.log(Count1,Count2,Count3);
+        console.log(formatCount(playCount1)+","+formatCount(playCount2)+","+formatCount(playCount3));
+
+        //7.函数回调的案例重构
+        function request(url, callback) {
+            console.log("根据URL向服务器发送网络请求")
+            console.log("需要花费比较长的时间拿到对应的结果");
+            var list = ["javascript", "javascript学习", "javascrpt高级编程"]
+            callback(list)
+        }
+        request("url", function (res) {
+            console.log("在handleResult中拿到结果");
+        })
+        //函数互相调用
+        function foo(fn) {
+            fn()
+        }
+        function bar() {
+            console.log("我是bar函数调用");
+        }
+        foo(bar)
+        //函数可以在变量和变量之间相互进行赋值
+        function foo() {
+            console.log("foo函数执行")
+
+        }
+        var bar = foo
+        bar()
+
+    </script>
+</body>
+
+</html>

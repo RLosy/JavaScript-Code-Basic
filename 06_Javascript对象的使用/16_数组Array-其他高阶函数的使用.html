@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //forEach函数 
+        // var names = ["abc", "cba", "nba", "mab"]
+
+        //1.for循环遍历数组
+
+        // for (var i = 0; i < names.length; i++) {
+        //     console.log(names[i]);
+        // }
+
+        //2.for ...in... 拿到数组的索引值
+
+        // for(var index in names){
+        //     console.log(index,names[index]);
+        // }
+
+        //3.for....of 拿到数组的元素
+        // for(var item of names){
+        //     console.log(item);
+        // }
+
+
+
+        //4.forEach 新增一种方式 传入函数 回调函数
+        //遍历数组，并且让数组中每一个元素都执行一次对应的方法
+        // names.forEach(function (item, index, arr) {
+        //     console.log(item,this)
+        // })
+        // names.forEach(function (item) {
+        //     console.log(item, this);
+        // }, { name: "why" })  //this会额外指向这个传入的name："why" ,不传入会指向window全局对象
+
+        //2.filter函数：过滤
+        // var nums = [11, 20, 55, 100, 88, 32]
+        //取偶数
+        // for (var newNums of nums) {
+        //     if (newNums % 2 !== 0) {
+        //         console.log(newNums);
+        //     }
+        // }
+
+        // var newNums1 = []
+        // for (var item of nums) {
+        //     if (item % 2 == 0) {
+        //         newNums1.push(item)
+        //     }
+        // }
+        // console.log(newNums1);
+
+        //filter
+        // var newNums2 = nums.filter(function (item) {
+        //     return item % 2 == 0
+        // })
+        // console.log(newNums2);
+
+        //3.map函数：映射关系 11*11 22*22 33*33
+        // var nums = [11, 22, 33, 44, 1200, 19008];
+
+        // var newNums = nums.map(function (item) {
+        //     return item * item
+        // })
+        // console.log(newNums);
+
+        //4.reduce 累加 数字的和
+        // var nums = [11, 22, 33, 44, 1200, 19008];
+        // var result = 0
+        // for (var item of nums) {
+        //     result = result + item
+        // }
+        // console.log(result);
+        //intialValue
+        //第一次执行的时候 prevalue = 0 item = 11
+        // var newNums = nums.reduce(function (preValue, item) {
+        //     console.log(`prevalue:${preValue},item:${item}`);
+        //     return preValue + item
+        // }, 0)
+        // console.log(newNums);
+
+        // var product = [
+        //     { name: "手机", price: 1000, count: 10 },
+        //     { name: "键盘", price: 120, count: 23 },
+        //     { name: "耳机", price: 10, count: 12 }
+        // ]
+
+        // var newPrice = product.reduce(function (preValue, item) {
+        //     return preValue + item.price * item.count
+        // }, 0)
+        // console.log(newPrice);
+
+
+        //综合练习：过滤所有偶数，映射所有偶数的平方，并且计算他们的和
+        // var nums = [11, 20, 55, 100, 88, 32]
+        // var newNums1 = nums.filter(function (item) {
+        //     if (item % 2 === 0)
+        //         return item
+        // })
+        // var newNums2 = newNums1.map(function (item) {
+        //     return item * item
+        // })
+        // var newNums3 = newNums2.reduce(function (preValue, item) {
+        //     return preValue + item
+        // }, 0)
+        // console.log(newNums3);
+
+        var total = nums.filter(function (item) {
+            if (item % 2 === 0)
+                return item
+        }).map(function (item) {
+            return item * item
+        }).reduce(function (preValue, item) {
+            return preValue + item
+        }, 0)
+        console.log(total);
+
+        var total = nums.filter(item => item % 2 === 0)
+            .map(item => item * item)
+            .reduce((preValue, item) => preValue + item, 0)
+        console.log(total);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 我是注释 -->
+    我是文本
+    <div class="box">我是box
+        <h2>我是标题</h2>
+        <p>我是内容,哈哈哈哈</p>
+    </div>
+    <script>
+        //1.获取三个节点
+        var bodyChildNodes = document.body.childNodes
+        var commentNode = bodyChildNodes[0]
+        var textNode = bodyChildNodes[2]
+        var divNode = bodyChildNodes[3]
+        console.log(commentNode, textNode, divNode);
+        //2.节点属性
+        // for (var node of bodyChildNodes) {
+        //     if (ndoe.nodeType === 8) {
+        //     } else if (node.nodeType === 3) {
+        //     } else if (node.nodeType === 1) {
+        //     }
+        // }
+        // console.log(commentNode.nodeType, textNode.nodeType, divNode.nodeType);//8 3 1
+        // console.log(Node.COMMENT_NODE);
+        //2.2 nodeName 节点的名称
+        //tagName 元素的标签名称
+        // console.log(commentNode.nodeName,textNode.nodeName,divNode.nodeName);
+        // console.log(commentNode.tagName,divNode.tagName);
+
+        //2.3 data(nodeValue)/innerHTML/textContent
+        //data针对非元素的节点获取数据
+        //innerHTML
+        // console.log(commentNode.data,textNode.data,divNode.data);
+        // console.log(divNode.innerHTML);
+        // console.log(divNode.textContent);
+
+        //设置文本,作用是一样的
+        //设置文本中包含元素内容,那么innerHTML浏览器会解析,textContent会当成文本的一部分
+        // divNode.innerHTML="<h2>heheheheheh</h2>"
+        // divNode.textContent="<h2>嘿嘿嘿嘿</h2>"
+
+        //2.4 outHTML
+        //包含了元素的完整的HTML
+        // console.log(divNode.outerHTML);
+
+
+
+    </script>
+</body>
+
+</html>

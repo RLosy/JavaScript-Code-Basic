@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">按钮1</button>
+    <button class="btn">按钮2</button>
+    <button class="btn">按钮3</button>
+    <button class="btn">按钮4</button>
+    <script>
+        //一、获取一个按钮点击
+        //1.拿到html元素
+        var btnEl = document.querySelector(".btn")
+        console.log(btnEl);
+        //2.监听对应按钮的点击
+        // btnEl.addEventListener("click",function(){})
+        btnEl.onclick = function () {
+            console.log("点击了按钮");
+        }
+        //二、获取所有按钮点击
+        // var btnEls = document.querySelectorAll(".btn")
+        // for (var i = 0; i < btnEls.length; i++) {  //var->let
+        //     var btn = btnEls[i]
+        //     btn.onclick = function () {
+        //         console.log(`按钮${i + 1}发生了点击！`);
+        //     }
+        // } 
+        // console.log(i);
+
+        var btnEls = document.querySelectorAll(".btn")
+
+        for (var i = 0; i < btnEls.length; i++) {
+            var btn = btnEls[i];
+
+                (function (m) {            //形成自己的作用域（闭包）
+                    btn.onclick = function () {
+                        console.log(`按钮${m + 1}被点击了 `);
+                    }
+                })(i);
+        }
+        console.log(i);
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

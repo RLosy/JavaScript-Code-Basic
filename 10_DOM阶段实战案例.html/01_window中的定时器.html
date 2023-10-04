@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn-out">取消setTimeout定时器</button>
+    <button class="btn-interval">取消setInterval定时器</button>
+
+    <script>
+
+        //1.setTimeout:推迟到一段时间间隔之后再执行
+        function foo(name,age,height) {
+            console.log("foo被调用~",name,age,height);
+        }
+        var timeoutID = setTimeout(foo, 3000 ,"lyd","18","1.65")
+
+        var btnOutEl = document.querySelector(".btn-out")
+        btnOutEl.onclick = function () {
+            //取消setTimeout定时器
+            clearTimeout(timeoutID)
+        }
+        //2.setInterval：重复运行一个函数，从一段时间间隔之后开始运行，之后以该时间间隔连续重复运行该函数
+        // function bar() {
+        //     console.log("bar被调用~");
+        // }
+        // var interval =setInterval(bar, 4000)
+
+        // var btnOutEl = document.querySelector(".btn-interval")
+        // btnOutEl.onclick = function () {
+        //     //取消setInterval定时器
+        //     clearInterval(interval)
+        // }
+
+    </script>
+</body>
+
+</html>

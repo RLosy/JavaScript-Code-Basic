@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象的练习
+        // 1.商品对象
+        var product = {
+            tupe: "液体",
+            name: "牛奶",
+            price: "99",
+            brand: "伊利",
+            "effect": function (getIngredient) {
+                console.log("补充的营养物质：" + getIngredient);
+            }
+        }
+        console.log(product["effect"]("蛋白质"));
+
+        // 2.手机对象
+        var Phone = {
+            size: "18px",
+            number: "18371996346",
+            color: "red",
+            call: function (getName) {
+                console.log("打电话给:", getName);
+            }
+        }
+        console.log(Phone.call("rosy"));
+
+        // 3.用户对象
+        var userName = {
+            acount: "lalisa",
+            nickname: "你好,漂亮",
+            passward: "18371996346",
+            id: "111111111",
+            pictureUrl: "图片地址",
+            role: {
+                id: 199,
+                name: "管理员"
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

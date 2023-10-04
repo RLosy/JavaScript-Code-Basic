@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 默认情况下arguments对象是所以（非箭头）函数中都可用的局部变量
+        // 该对象中存放着所有的调用者传入的参数，从0位置开始，依次存放，
+        // arguments变量的类型是一个object类型（array-like），不是一个数组，但是和数组的用法看起来相似
+        // 如果调用者传入的参数多余函数接收的参数，可以通过arguments去获取
+        function foo(name, age) {
+            console.log("传入的参数：" + name, age);
+            console.log(typeof arguments); //object
+
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        foo('kobe', 28, "广州市", 1.88)
+    </script>
+</body>
+
+</html>

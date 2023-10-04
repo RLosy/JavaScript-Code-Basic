@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>嘿嘿嘿嘿嘿</span>
+    <div class="box">
+        <span class="span">呵呵呵</span>
+        <p>哈哈哈哈</p>
+    </div>
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        //1.通过innerHTML(不推荐)
+        // boxEl.innerHTML = `
+        // <h2 class="title">我是标签</h2>
+        // `
+        // setTimeout(function () {
+        //     var titleEl = document.querySelector("title")
+        //     titleEl.classList.add("active")
+        // })
+        //2.真是创建一个DOM对象
+        var h2El = document.createElement("h2")
+        h2El.className = "title"
+        h2El.classList.add("active")
+        h2El.textContent = "我是标题"
+        //将元素插入boxEl
+        // boxEl.append(h2El)  //追加为子元素的第一个位置
+        // boxEl.prepend(h2El)  //追加为子元素的最后一个位置
+        // boxEl.after(h2El)    //追加为兄弟元素的后面
+        // boxEl.before(h2El)   //追加为兄弟元素的前面
+        boxEl.replaceWith(h2El, "lalisa")  //替换元素 可传入多个 一起替换该元素
+
+        //插入到span和p元素之间
+        // var spanEl = document.querySelector("span")   //获取的是第一个 
+        // var spanEl = document.querySelector(".span")
+        // var spanEl = document.children[0]
+        var spanEl = boxEl.querySelector("span")
+        spanEl.after(h2El)
+
+
+
+
+    </script>
+</body>
+
+</html>

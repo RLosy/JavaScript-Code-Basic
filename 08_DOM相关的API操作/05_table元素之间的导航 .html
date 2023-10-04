@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 高级元素:table -->
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>身高</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>
+                <tr>
+                    <td>why</td>
+                    <td>18</td>
+                    <td>1.88</td>
+                </tr>
+                <tr>
+                    <td>kobe</td>
+                    <td>19</td>
+                    <td>2.88</td>
+                </tr>
+            </tbody>
+        </tbody>
+    </table>
+
+    <script>
+        var tableE1 = document.body.firstElementChild //as HTMLTableElement
+        //通过table元素获取内部的后代元素
+        console.log(tableE1.tHead,tableE1.tBodies,tableE1.tFoot);
+        console.log(tableE1.rows);
+
+
+        //拿到一行元素
+        var rowE1 = tableE1.rows[2] //as HTMLTableRowElement
+        console.log(rowE1.cells[0]);
+        console.log(rowE1.sectionRowIndex);
+        console.log(rowE1.rowIndex);
+    </script>
+</body>
+</html>

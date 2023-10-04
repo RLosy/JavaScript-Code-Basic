@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.debug
+        //chrome调试技巧
+        function foo(name) {
+            console.log("foo函数执行", name)
+            var name = 'kobe'
+
+            function hi() {
+                console.log("hi", name);
+            }
+            foo()
+            return hi
+        }
+
+        function nickname() {
+            console.log("nickname被执行")
+            var name = "kobe"
+            function Hi() {
+                console.log("hi", name);
+            }
+            foo()
+            return Hi
+        }
+        debugger
+        // var fn = bar()
+        // fn()
+
+        //         setTimeout(fn, duration)
+        // fn可以传入一个匿名函数 setTimeout 高阶函数
+        //         浏览器内部在duration时间之后，主动的调入fn，
+        setTimeout(function () {
+            console.log("匿名函数2秒后执行~");
+        }, 2000)
+
+        for (var i = 0; i < 10; i++) {
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>

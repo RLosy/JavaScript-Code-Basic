@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        display: flex;
+        height: 200px;
+        width: 200px;
+        background-color: orange;
+    }
+
+    span {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <!-- preventDefault取消事件默认行为 -->
+    <!-- stopPropagation阻止事件进一步传递（冒泡和捕获都可以阻止） -->
+
+    <a href="http://www.baidu.com">百度一下</a>
+
+    <div>
+        <span>
+            <button>按钮</button>
+        </span>
+    </div>
+
+    <script>
+
+        var aEl = document.body.firstElementChild
+
+        aEl.addEventListener("click", function (event) {
+            alert("点击被监听~")
+            event.preventDefault(); //阻止目标行为的发生
+
+        })
+
+        var divEl = document.querySelector("div")
+        var spanEl = document.querySelector("span")
+        var btnEl = document.querySelector("button")
+
+        divEl.addEventListener("click",function(event){
+            console.log("div元素被捕获监听~");
+            // event.stopPropagation()
+        },true)
+        spanEl.addEventListener("click",function(){
+            console.log("span元素被捕获监听~");
+        },true)
+        btnEl.addEventListener("click",function(){
+            console.log("button元素被捕获监听~");
+        },true)
+
+
+        divEl.addEventListener("click",function(){
+            console.log("div元素被冒泡监听~");
+        })
+        spanEl.addEventListener("click",function(event){
+            console.log("span元素被冒泡监听~");
+            // event.stopPropagation()
+        })
+        btnEl.addEventListener("click",function(){
+            console.log("button元素被冒泡监听~");
+        })
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

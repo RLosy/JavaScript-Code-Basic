@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- //监听按钮，过五秒之后移除掉 -->
+
+    <button>按钮</button>
+
+    <script>
+        var btnEl = document.querySelector("button")
+
+        var foo = function () {
+            console.log("按钮被监听~");
+        }
+        btnEl.addEventListener("click", foo)
+
+        setTimeout(function () {
+            btnEl.removeEventListener("click", foo)
+        }, 4000)
+
+
+    </script>
+</body>
+
+</html>

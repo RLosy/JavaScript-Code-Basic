@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.数组中存放的是原始类型
+        var names = ["abc", "cba", "nba", "mba"]
+        //1.indexof
+        //可以找到，返回对应的索引
+        //没有找到。返回-1
+        console.log(names.indexOf("nbb"));
+        //2.数组中存在的是对象类型
+        // var students = [
+        //     { id: 100, name: "why", age: 18 },
+        //     { id: 101, name: "lyd", age: 19 },
+        //     { id: 102, name: "lisa", age: 20 },
+        //     { id: 103, name: "rose", age: 21 }
+
+        // ]
+        //2.1自己写一个for循环
+        //查找的是id为101的学生信息
+        // var stu = null //var stu ={} 不合适   判断有没有对象定义为对象无法判断
+        // for (var i = 0; i < students.length; i++) {
+        //     if (students[i].id === 101) {
+        //         stu = students[i]
+        //         break
+        //     }
+        // }
+        //判断上面的算法有没有找到对应的学生
+        // if (stu) {
+        //     console.log("找到了对应的学生");
+        // } else {
+        //     console.log("没有找到对应的学生");
+        console.log(stu);
+        // }
+        //2.2find方法：高阶函数
+        var students = [
+            { id: 100, name: "why", age: 18 },
+            { id: 101, name: "lyd", age: 19 },
+            { id: 102, name: "lisa", age: 20 },
+            { id: 103, name: "rose", age: 21 }
+        ]
+        var stu = students.find(function (item) { //var stu = students.find(item => item.id ===101 )
+            // console.log("==============",item);
+            if (item.id === 101)
+                return true
+        })
+        console.log(stu);
+        //2.3 箭头函数
+        var stu = students.find( item => item.id === 101 )
+        console.log(stu);
+
+        
+    </script>
+</body>
+
+</html>

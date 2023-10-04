@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 浏览器将我们编写在html中的每一个元素都抽象成一个个对象 -->
+    <div>
+        <h2>我是标题</h2>
+        <p>我是P元素</p>
+        <!-- ul>li{$}*5 -->
+        <ul>          
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        
+        <input type="text">
+        <button>搜索</button>
+        <script>
+            HTMLLIElement
+            HTMLDivElement
+            HTMLInputElement
+            
+            var boxE1 = document.body.children[0]
+            console.log(boxE1);
+            boxE1.style.color = 'red'
+
+            boxE1.children[1].style.fontsize = '100px'
+            boxE1.children[0].nextElementSibling.style.color = 'orange'
+        </script>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

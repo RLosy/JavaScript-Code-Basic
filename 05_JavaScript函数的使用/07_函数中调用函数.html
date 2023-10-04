@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //需求：封装一个函数，函数可以去实现x的n次方法
+        function powSum(x, n) {
+
+            // return x ** n
+            var result = 1
+            for (var i = 0; i < n; i++) {
+                result = result * x
+            }
+            // console.log(result);
+            return result
+        }
+        console.log(powSum(3, 3));
+        // console.log(Math.powSum(2, 3))
+
+        //递归实现
+        function pow(x, n) {
+            if (n === 1) return x
+            return x * pow(x, n - 1)
+        }
+        console.log(pow(4, 2));
+
+
+
+
+    </script>
+</body>
+
+</html>

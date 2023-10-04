@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1" onclick="console.log('按钮一被点击~');">按钮一</button>
+    <button class="btn2">按钮二</button>
+    <button class="btn3">按钮三</button>
+</body>
+
+<script>
+    //2.onclick属性
+    var btnEl1 = document.querySelector(".btn1")
+    var btnEl2 = document.querySelector(".btn2")
+    var btnEl3 = document.querySelector(".btn3")
+
+    //第二个函数会将第一个函数复写掉，只能执行第二个
+    btnEl2.onclick = function () {
+        console.log("按钮二被点击~");
+    }
+    btnEl2.onclick = function () {
+        console.log("按钮二被第二个函数使用~");
+    }
+    //addEventListener 可同时调用多个函数（Eventarget）
+    btnEl3.addEventListener("click",function () {
+        console.log("按钮三中第一个函数被执行~");
+    })
+    btnEl3.addEventListener("click",function () {
+        console.log("按钮三中第二个函数被执行~");
+    })
+    btnEl3.addEventListener("click",function () {
+        console.log("按钮三中第三个函数被执行~");
+    })
+
+
+
+
+
+
+</script>
+</html>

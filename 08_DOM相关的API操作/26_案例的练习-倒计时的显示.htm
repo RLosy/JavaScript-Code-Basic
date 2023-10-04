@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .countdown {
+        color: #f00;
+        font-size: 20px;
+    }
+
+    .countdown .time {
+        background-color: #f00;
+        color: #fff;
+        padding: 8px;
+        display: inline-block;
+        border-radius: 3px;
+    }
+</style>
+
+<body>
+    <!-- 倒计时案例练习 -->
+
+    <div class="countdown">
+        <span class="time hour">24</span>
+        <span class="split">:</span>
+        <span class="time minute">11</span>
+        <span class="split">:</span>
+        <span class="time second">30</span>
+    </div>
+
+    <script src="./js/format.js"></script>
+    <script>
+        //1.获取元素
+        var hourEl = document.querySelector(".hour")
+        var minuteEl = document.querySelector(".minute")
+        var secondEl = document.querySelector(".second")
+
+        setInterval(function () {
+            //获取倒计时的小时-分钟-秒钟
+            //10:35 => 24 :00 ：00
+            var nowDate = new Date()
+            var endDate = new Date()   //设置结束时间 结束时间与开始时间的差值 getTime获取毫秒时间
+            endDate.setHours(24)
+            endDate.setMinutes(0)
+            endDate.setSeconds(0)
+            endDate.setMilliseconds(0)
+
+            var intervalTime = Math.floor((endDate.getTime() - nowDate.getTime()) / 1000) //getTime获取的是毫秒
+            console.log(intervalTime);
+
+            //433878:x小时x分钟x秒钟
+            var hour = Math.floor(intervalTime / 3600)
+            var minute = Math.floor((intervalTime / 60) % 60)
+            var second = intervalTime % 60
+
+            //2.设置内容
+            hourEl.textContent = formatPadLeft(hour)
+            minuteEl.textContent = formatPadLeft(minute)
+            secondEl.textContent = formatPadLeft(second)
+
+
+        }, 1000)  //1秒等于1000毫秒
+
+    </script>
+</body>
+
+</html>

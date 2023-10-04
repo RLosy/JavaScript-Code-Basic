@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.Date对象，转成时间戳
+        var date = new Date()
+        var date2 = new Date("2033-03-03")
+        //2.方法一：当前时间的时间戳
+        var tempTime1 = Date.now()
+        console.log(tempTime1);
+
+        //3.将对象转成时间戳
+        var tempTime2 = date.getTime()
+        var tempTime2 = date.valueOf()
+
+        //3表达式（了解）
+        console.log(+date);
+
+        // 计算这个操作所花费的时间、
+        var startTime = Date.now()
+        for (var i = 0; i < 10_0000;i++){
+            console.log(i);
+        }
+        var endTime = Date.now()
+        console.log("执行100000次for循环的打印所消耗的时间：",endTime - startTime);
+
+
+        
+
+    </script>
+</body>
+
+</html>

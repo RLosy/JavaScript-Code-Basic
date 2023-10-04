@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //dispatchEvent：派发某个事件类型到EventTarget上
+        window.addEventListener("coderwhy", function () {
+            console.log("监听到coderwhy~");
+        })
+
+        setTimeout(function () {
+            window.dispatchEvent(new Event("coderwhy"))
+        }, 5000)
+
+
+    </script>
+</body>
+
+</html>

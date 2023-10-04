@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 200px;
+        width: 200px;
+    }
+</style>
+
+<body>
+
+
+    <script>
+
+        //二者之间的区别：
+        //DOMContentLoaded:浏览器已完全加载了HTML,并构建了DOM树，但像<img>和样式表之类的外部资源可能尚未加载完成
+        //load:浏览器不仅加载完成了html，还加载完成了所以外部资源：图片，样式等
+
+        window.addEventListener("DOMContentLoaded", function () {
+            // 1.拿到box
+            var boxEl = document.querySelector(".box")
+            boxEl.style.backgroundColor = "green";
+            console.log("html内容加载完毕");
+            //2.拿到image
+            var  imgEl = document.querySelector("img")
+            console.log("图片的宽度和高度：",imgEl.offsetWidth, imgEl.offsetHeight);
+        })
+
+        //1.注册监听事件
+        window.onload = function () {
+            // var boxEl = document.querySelector(".box")
+            // boxEl.style.backgroundColor = "green";
+            console.log("文档中所有资源都加载完毕~");
+            // var  imgEl = document.querySelector("img")
+            // console.log("图片的宽度和高度：",imgEl.offsetWidth, imgEl.offsetHeight);
+        }
+
+
+        window.onresize = function(){
+            console.log("创建大小发生改变时");
+        }
+    </script>
+    <div class="box"></div>
+    <a href="#">百度一下</a>
+    <img src="../image/rosy_02.jpg" alt="">
+
+</body>
+
+</html>

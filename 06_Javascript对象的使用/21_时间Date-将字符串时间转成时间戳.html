@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var timeString = "2023-03-20"
+
+        //方式一：
+        var date = new Date(timeString)
+        var timetamp = date.getTime()
+        console.log(timetamp);
+
+        //方式二：
+        var timetamp = Date.parse(timeString)
+        console.log(timetamp);
+        //格式不能被解析 NaN  2023/02/c
+ 
+
+    </script>
+</body>
+</html>

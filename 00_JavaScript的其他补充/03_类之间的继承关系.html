@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //继承的概念
+
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            eating = function(){
+                console.log("吃东西");
+            }
+        }
+         
+        class Student extends Person{
+            studying()
+            {
+                console.log("会学习~");
+            }
+        }
+
+        var stu = new Student("lyd",18)
+        console.log(stu);
+
+
+
+    </script>
+</body>
+
+</html>

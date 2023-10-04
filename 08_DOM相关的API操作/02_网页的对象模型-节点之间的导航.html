@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 我是注释,哈哈哈哈 -->
+    我是文本,呵呵呵                   
+    <div class="box">哈哈哈哈哈</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        // var htmlE1 = document.documentElement
+        // var bodyE1 = document.body
+        // var headE1 = document.head
+        // var doctype = document.doctype
+        // console.log(htmlE1,bodyE1,headE1,doctype)
+
+        //1.获取节点的导航
+        var bodyE1 = document.body
+        //1.1获取body所以的子节点
+        console.log(bodyE1.childNodes)
+        //1.2获取body的第一个子节点
+        var bodyE1FirstChild = bodyE1.firstChild
+        //1.3获取body中的注释
+        var bodyE1CommentChild = bodyE1FirstChild.nextSibling
+        console.log(bodyE1CommentChild);
+        //1.4获取body的父节点
+        var bodyParent = bodyE1.parentNode
+        console.log(bodyParent)
+
+
+
+    </script>
+</body>
+
+</html>

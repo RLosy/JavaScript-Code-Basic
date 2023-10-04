@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date()
+        console.log(date.toISOString());
+
+        var year = date.getFullYear()
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+        var hour = date.getHours()
+        var minute = date.getMinutes()
+        var second = date.getSeconds()
+        
+        console.log(year,mouth,day,hour,minute,second);
+        console.log(`${year}/${month}/${day} ${hour}:${minute}:${second}`);
+        
+
+        //一周中的第几天
+        var weekday = date.getDay()
+        console.log(weekday);
+
+        //2.也可以给date设置时间（了解）
+        date.setFullYear(2023)
+
+
+     
+    </script>
+</body>
+
+</html>

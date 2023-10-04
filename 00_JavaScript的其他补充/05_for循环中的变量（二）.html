@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+    </div>
+
+    <script>
+        var btnEls = document.querySelectorAll("button")
+
+        for (var i = 0; i < btnEls.length; i++) {
+            var btnItemEl = btnEls[i]
+
+            btnItemEl.index = i 
+            debugger
+            btnItemEl.onclick = function () {
+                debugger
+                // console.log(btnItemEl); //按钮4
+                //怎么样在这里能拿到对应的btnItemEl
+                //方案一直接获取this
+                // console.log(this);
+                //方案二：先获取索引
+                console.log(this.index);
+
+            }
+        }
+        // console.log(i);     //4
+        console.log(btnItemEl);
+
+
+    </script>
+</body>
+
+</html>

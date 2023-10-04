@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1.String的基本使用
+        var name = "liuyandong"
+        var address = "广州市"
+        var intro = "认真是一种可怕的力量!"
+        //2.别的引号的使用
+        //单引号
+        var message = 'hello World'
+        //双引号
+        var message = "hello world"
+        //反引号(ES6新增语法)
+        //${变量/表达式}
+        var message3 = `hello world,${name},${2 + 3}`
+        //前后的引号一定要一致
+        //字符串本身中包含引号
+        var message4 = "我是'codewhy'"
+        //转移字符\
+        var message5 = 'my name \"\\" is "刘炎东"'
+        console.log(message5);
+        //字符串本身的方法和属性
+        var message = 'Hello World'
+        console.log(message.length)
+        //字符串的操作
+        var nickname = "codewhy"
+        var info = "my name is "
+
+        var infostr = `my name is ${nickname}`
+
+        var infostr = info + nickname
+
+        console.log(infostr,infostr);
+
+    </script> 
+</body>
+</html>

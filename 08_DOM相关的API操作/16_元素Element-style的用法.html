@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" style="background-color: aqua;color: white;">
+        我是box
+    </div>
+    <script>
+        var boxEl = document.querySelector(".box")
+        //1.在property中使用的驼峰格式
+        // console.log(boxEl.style);
+        //2.如果将一个属性的值,设置为空的字符串,那么是使用默认值
+        // boxEl.style.fontsize = ""
+        // boxEl.style.display = ""
+        //3.设置多个样式
+        // boxEl.style.fontsize = "30px"
+        // boxEl.style.color = "red"
+        boxEl.style.cssText = "font-size:30px;color:red"
+
+
+        var boxEl = document.querySelector(".box")
+        //1.在property中，多词属性，使用驼峰式
+        console.log(boxEl.style.backgroundColor);
+        //2.如果将一个属性值设置为空时，浏览器将设置为默认值
+        boxEl.style.fontSize = ""
+        //3.设置多个样式
+        //会覆盖掉原来的样式，不推荐使用
+        boxEl.style.cssText = "font-size:30px; height:60px; background-color: green"
+        // console.log(boxEl.style.fontSize);
+
+    </script>
+</body>
+
+</html>

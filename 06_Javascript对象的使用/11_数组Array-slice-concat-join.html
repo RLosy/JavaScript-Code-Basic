@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["abc", "cba", "nab", "mba", "kobe", "why", "lyd"]
+        //1.slice截取方法：不会修改数组
+        //slice有区别：slice拼接修改原有的数组
+        //start从什么位置开始
+        //end结束位置不包含
+        // var newNames = names.slice(2, 4)
+        // console.log(newNames)
+        //2.concat方法：将多个数组拼接在一起
+        // var names1 = ["abc", "cba"]
+        // var names2 = ["nab", "mba"]
+        // var names3 = ["why", "kobe"]
+
+        // names1.push(names2)
+        // names1.push(names3)
+        // console.log(names1)
+        var newNames = []
+        newNames.push(...names)
+        console.log(newNames);
+        // var newNames2 = names1.concat(names2,names3)
+        // console.log(newNames2);
+
+        //3.join方法：字符串split
+        var names = ["abc", "cba", "nab", "mba", "kobe", "why", "lyd"]
+        console.log(names.join("*"));
+        console.log(typeof names);  //object
+
+
+    </script>
+</body>
+
+</html>

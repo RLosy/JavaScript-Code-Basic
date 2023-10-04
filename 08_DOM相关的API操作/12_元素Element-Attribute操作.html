@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="abc" class="box" title="box" age="18" height="1.88">
+        我是box
+    </div>
+    <input type="checkbox" checked="checked">
+    <script>
+        var boxEl = document.querySelector(".box")
+        //1.所有的attribute都支持的操作
+        //判断（大小写不敏感，）返回布尔值
+        console.log(boxEl.hasAttribute("age"), boxEl.hasAttribute("abc"), boxEl.hasAttribute("id"));
+        //获取 拿到的是字符串类型
+        console.log(boxEl.getAttribute("age"), boxEl.getAttribute("abc"), boxEl.getAttribute("id"));
+        //设置
+        boxEl.setAttribute("id","cba")
+        //移除
+        // boxEl.removeAttribute("id")
+
+        //attr对象的集合，有name和value属性
+        var boxAtrributes = boxEl.attributes
+        for (var attr of boxAtrributes) {
+            console.log(attr.name, attr.value);
+        }
+        //没写 返回空 写了返回字符串checked
+        //希望默认拿到类型
+        var inputEl = document.querySelector("input")
+        console.log(inputEl.getAttribute("checked")); 
+
+    </script>
+</body>
+
+</html>

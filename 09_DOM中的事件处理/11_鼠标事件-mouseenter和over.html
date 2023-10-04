@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        background-color: orange;
+    }
+    .box span{
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span></span>
+    </div>
+</body>
+<script>
+    var boxEl = document.querySelector(".box")
+    var spanEl = document.querySelector("span")
+
+    //第一组 不冒泡 子元素属于父元素的一部分
+    //进入子元素依然属于在该元素内，没有任何反应
+    // boxEl.onmouseenter = function () {
+    //     console.log("box mouseenter");
+    // }
+    // boxEl.onmouseleave = function () {
+    //     console.log("box mousleave ");
+    // }
+
+    // spanEl.onmouseenter = function () {
+    //     console.log("spanEl mouseenter");
+    // }
+    // spanEl.onmouseleave = function () {
+    //     console.log("spanEl mousleave ");
+    // }
+
+
+
+
+    //第二组 冒泡
+    //进入元素的子元素时
+    //先调用父元素的mouseout
+    //再调用子元素的mouseover
+    //因为支持 冒泡,所以会将mouseover传递到父元素中
+    boxEl.onmouseover = function () {
+        console.log("box mouseover");
+    }
+    boxEl.onmouseout = function () {
+        console.log("box mouseout");
+    }
+
+    // spanEl.onmouseover = function () {
+    //     console.log("spanEl mouseover");
+    // }
+    // spanEl.onmouseout = function () {
+    //     console.log("spanEl mouseout");
+    // }
+
+
+</script>
+
+</html>
